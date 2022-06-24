@@ -6,8 +6,8 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
-use Illuminate\Http\Request; // 👈 Import the Request class
-use Illuminate\Validation\Rule; // 👈 Import the Validation Rule class
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 class PostController extends Controller
 {
     /**
@@ -18,7 +18,6 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderByDesc('id')->get();
-        //dd($posts);
         return view('admin.posts.index', compact('posts'));
     }
 
